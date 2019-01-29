@@ -32,6 +32,11 @@ public:
         this->T = _T;
         this->sigma = _sigma;
     }
+    //getters
+    const double& get_S() { return S; }
+    const double& get_K() { return K; }
+    const double& get_T() { return T; }
+    const double& get_sigma() { return sigma; }
     double d1(); //first parameter for cdf
     double d2(); //second parameter for cdf
     double cdf(double _d); //cumulative distribution function
