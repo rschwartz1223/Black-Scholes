@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B1F39FB21FFDBBF0075531F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1F39FA21FFDBBF0075531F /* main.cpp */; };
+		1B1F3A0621FFEAD70075531F /* monte_carlo_integration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1F3A0421FFEAD70075531F /* monte_carlo_integration.cpp */; };
+		1B1F3A0821FFECFC0075531F /* european_vanila_option.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B1F3A0721FFECFC0075531F /* european_vanila_option.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		1B1F39F721FFDBBF0075531F /* Black-Scholes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Black-Scholes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1F39FA21FFDBBF0075531F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1B1F3A0321FFDEBE0075531F /* european_vanilla_option.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = european_vanilla_option.h; sourceTree = "<group>"; };
+		1B1F3A0421FFEAD70075531F /* monte_carlo_integration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = monte_carlo_integration.cpp; sourceTree = "<group>"; };
+		1B1F3A0721FFECFC0075531F /* european_vanila_option.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = european_vanila_option.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				1B1F39FA21FFDBBF0075531F /* main.cpp */,
+				1B1F3A0321FFDEBE0075531F /* european_vanilla_option.h */,
+				1B1F3A0721FFECFC0075531F /* european_vanila_option.cpp */,
+				1B1F3A0421FFEAD70075531F /* monte_carlo_integration.cpp */,
 			);
 			path = "Black-Scholes";
 			sourceTree = "<group>";
@@ -118,7 +126,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1F3A0621FFEAD70075531F /* monte_carlo_integration.cpp in Sources */,
 				1B1F39FB21FFDBBF0075531F /* main.cpp in Sources */,
+				1B1F3A0821FFECFC0075531F /* european_vanila_option.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
