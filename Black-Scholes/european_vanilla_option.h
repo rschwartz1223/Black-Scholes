@@ -34,7 +34,7 @@ public:
     }
     double d1(); //first parameter for cdf
     double d2(); //second parameter for cdf
-    double cdf(double _n, double _d); //cumulative distribution function
+    double cdf(double _d); //cumulative distribution function
     double price_call(); //calculate price of European vanilla call
     double price_put(); //calculate price of European vanilla put
 };
