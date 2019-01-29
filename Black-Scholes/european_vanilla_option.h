@@ -34,6 +34,7 @@ public:
         set_T(_T);
         set_sigma(_sigma);
     }
+    
     //setters
     void set_S(double a) { S = a; }
     void set_K(double b) { K = b; }
@@ -44,10 +45,12 @@ public:
     const double& get_K() { return K; }
     const double& get_T() { return T; }
     const double& get_sigma() { return sigma; }
+    
     //first parameter for cdf
     double d1(const double S, const double K, const double T, const double sigma, const double r);
     //second parameter for cdf
     double d2(const double S, const double K, const double T, const double sigma, const double r);
+    
     //cumulative distribution function
     double cdf(double n, double d);
     

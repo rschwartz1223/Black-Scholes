@@ -5,6 +5,7 @@
    Created by Robert Schwartz on 1/28/19.
    Copyright © 2019 Robert Schwartz. All rights reserved. */
 
+#include "european_vanilla_option.h"
 #include <iostream>
 #include <cmath> //exp() (Euler's number)
 
