@@ -9,6 +9,7 @@
 #include <cmath> //pow(), exp(), M_PI, log10(), sqrt()
 
 const double r = 0.026; //1 year treasury rate (1/25/19)
+//const double cdf_1 = 0.5; //definite integral of cdf from -∞ to 0
 
 /* calculate first and second parameters (d1 & d2) of CDF
    @return d1/d2 parameter for cumulative distribution function */
@@ -25,8 +26,7 @@ double Option::d2()
 }
 
 /* cumulative distribution function for standard normal distribution using recursion.
- @param d value of d1 or d2
- @return cdf_d average value of all samples divided by sqrt(2PI) */
+ @param d value of d1 or d2 */
 double Option::cdf(double d)
 {
     double k = 1.0 / (1.0 + 0.2316419 * d);
@@ -38,6 +38,12 @@ double Option::cdf(double d)
     }
 }
 
+/*double Option::cdf(double d)
+{
+    double cdf_d = cdf_1 + (1 / (2 * sqrt(2))) * erf(d * 0.5);
+    return cdf_d;
+}*/
+
 double Option::price_call()
 {
     return ((this->S) * cdf(d1()) - (this->K) * exp(-r * this->T) * cdf(d2()));
@@ -47,3 +53,8 @@ double Option::price_put()
 {
     return ((this->K) * exp(-r * this->T) - this->S + this->price_call());
 }
+
+/*double Option::price_delta()
+{
+    
+}*/

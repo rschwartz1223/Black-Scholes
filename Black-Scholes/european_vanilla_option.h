@@ -42,6 +42,7 @@ public:
     double cdf(double _d); //cumulative distribution function
     double price_call(); //calculate price of European vanilla call
     double price_put(); //calculate price of European vanilla put
+    double price_delta(); //
 };
 
 #endif
