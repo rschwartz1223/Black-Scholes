@@ -9,7 +9,6 @@
 #include <cmath> //pow(), exp(), M_PI, log10(), sqrt()
 
 const double r = 0.026; //1 year treasury rate (1/25/19)
-//const double cdf_1 = 0.5; //definite integral of cdf from -∞ to 0
 
 /* calculate first and second parameters (d1 & d2) of CDF
    @return d1/d2 parameter for cumulative distribution function */
@@ -38,12 +37,6 @@ double Option::cdf(double d)
     }
 }
 
-/*double Option::cdf(double d)
-{
-    double cdf_d = cdf_1 + (1 / (2 * sqrt(2))) * erf(d * 0.5);
-    return cdf_d;
-}*/
-
 double Option::price_call()
 {
     return ((this->S) * cdf(d1()) - (this->K) * exp(-r * this->T) * cdf(d2()));
@@ -54,7 +47,29 @@ double Option::price_put()
     return ((this->K) * exp(-r * this->T) - this->S + this->price_call());
 }
 
-/*double Option::price_delta()
+double Option::call_delta()
 {
-    
-}*/
+    return cdf(d1());
+}
+
+double Option::put_delta()
+{
+    return call_delta() - 1;
+}
+
+double Option::gamma()
+{
+    return (1 / (this->S * this->sigma * sqrt(this->T) * sqrt(2 * M_PI))) * exp(-(pow(d1(), 2)) / 2);
+}
+
+double Option::call_theta()
+{
+    return (1/365) * (-((this->S * this->sigma * exp(-(pow(d1(), 2)) / 2)) / (2 * sqrt(this->T) * sqrt(2 * M_PI))) -
+                     (r * this->K * exp(-r * this->T * cdf(d2()))));
+}
+
+double Option::put_theta()
+{
+    return (1/365) * (-((this->S * this->sigma * exp(-(pow(d1(), 2)) / 2)) / (2 * sqrt(this->T) * sqrt(2 * M_PI))) +
+                     (r * this->K * exp(-r * this->T * cdf(-1 * d2()))));
+}

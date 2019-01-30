@@ -1,5 +1,6 @@
 /* Black-Scholes model to price a European vanilla call and
-   put option.
+   put option. This model does not take into consideration
+   dividend yield.
  
    Created by Robert Schwartz on 1/28/19.
    Copyright © 2019 Robert Schwartz. All rights reserved. */

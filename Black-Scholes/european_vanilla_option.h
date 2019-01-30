@@ -37,12 +37,19 @@ public:
     const double& get_K() { return K; }
     const double& get_T() { return T; }
     const double& get_sigma() { return sigma; }
+    
     double d1(); //first parameter for cdf
     double d2(); //second parameter for cdf
     double cdf(double _d); //cumulative distribution function
     double price_call(); //calculate price of European vanilla call
     double price_put(); //calculate price of European vanilla put
-    double price_delta(); //
+    
+    //Greeks
+    double call_delta();
+    double put_delta();
+    double gamma();
+    double call_theta();
+    double put_theta();
 };
 
 #endif
