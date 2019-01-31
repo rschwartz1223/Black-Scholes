@@ -20,7 +20,12 @@ int main(int argc, const char * argv[])
     std::cout << "Volatility:\t\t\t\t" << test_option.get_sigma() << std::endl;
     std::cout << "1 Year Treasury Rate:\t" << r << std::endl;
     std::cout << "Call Price:\t\t\t\t" << test_option.price_call() << std::endl;
-    std::cout << "Put Price:\t\t\t\t" << test_option.price_put() << std::endl << std::endl;
+    std::cout << "Put Price:\t\t\t\t" << test_option.price_put() << std::endl;
+    std::cout << "Call Delta:\t\t\t\t" << test_option.call_delta() << std::endl;
+    std::cout << "Put Delta:\t\t\t\t" << test_option.put_delta() << std::endl;
+    std::cout << "Option Gamma:\t\t\t" << test_option.gamma() << std::endl;
+    //std::cout << "Call Theta:\t\t\t\t" << test_option.call_theta() << std::endl;
+    //std::cout << "Put Theta:\t\t\t\t" << test_option.put_theta() << std::endl;
     
     return 0;
 }

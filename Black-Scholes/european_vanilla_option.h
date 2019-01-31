@@ -48,8 +48,8 @@ public:
     double call_delta();
     double put_delta();
     double gamma();
-    double call_theta();
-    double put_theta();
+    //double call_theta();
+    //double put_theta();
 };
 
 #endif

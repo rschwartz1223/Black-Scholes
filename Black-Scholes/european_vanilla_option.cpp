@@ -30,11 +30,10 @@ double Option::cdf(double d)
 {
     double k = 1.0 / (1.0 + 0.2316419 * d);
     double k_sum = k * (0.319381530 + k * (-0.356563782 + k * (1.781477937 + k * (-1.821255978 + 1.330274429 * k))));
-    if (d >= 0.0) {
+    if (d >= 0.0)
         return (1.0 - (1.0 / (sqrt(2 * M_PI))) * exp(-0.5 * d * d) * k_sum);
-    } else {
+    else
         return (1.0 - cdf(-d));
-    }
 }
 
 double Option::price_call()
@@ -62,14 +61,14 @@ double Option::gamma()
     return (1 / (this->S * this->sigma * sqrt(this->T) * sqrt(2 * M_PI))) * exp(-(pow(d1(), 2)) / 2);
 }
 
-double Option::call_theta()
+/*double Option::call_theta()
 {
-    return (1/365) * (-((this->S * this->sigma * exp(-(pow(d1(), 2)) / 2)) / (2 * sqrt(this->T) * sqrt(2 * M_PI))) -
-                     (r * this->K * exp(-r * this->T * cdf(d2()))));
+    return ((1/365) * (-((this->S * this->sigma * exp(-(pow(d1(), 2)) / 2)) / (2 * sqrt(this->T) * sqrt(2 * M_PI))) -
+                      (r * this->K * exp(-r * this->T * cdf(d2())))));
 }
 
 double Option::put_theta()
 {
-    return (1/365) * (-((this->S * this->sigma * exp(-(pow(d1(), 2)) / 2)) / (2 * sqrt(this->T) * sqrt(2 * M_PI))) +
-                     (r * this->K * exp(-r * this->T * cdf(-1 * d2()))));
-}
+    return ((1/365) * (-((this->S * this->sigma * exp(-(pow(d1(), 2)) / 2)) / (2 * sqrt(this->T) * sqrt(2 * M_PI))) +
+                      (r * this->K * exp(-r * this->T * cdf(-1 * d2())))));
+}*/
