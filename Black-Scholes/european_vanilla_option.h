@@ -40,16 +40,20 @@ public:
     
     double d1(); //first parameter for cdf
     double d2(); //second parameter for cdf
-    double cdf(double _d); //cumulative distribution function
-    double price_call(); //calculate price of European vanilla call
-    double price_put(); //calculate price of European vanilla put
+    double cdf(double d); //cumulative distribution function
+    double pdf(double d); //standard normal probability density function
+    double call_price(); //calculate price of European vanilla call
+    double put_price(); //calculate price of European vanilla put
     
     //Greeks
     double call_delta();
     double put_delta();
     double gamma();
-    //double call_theta();
-    //double put_theta();
+    double call_theta();
+    double put_theta();
+    double vega();
+    double call_rho();
+    double put_rho();
 };
 
 #endif
