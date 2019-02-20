@@ -3,8 +3,8 @@
    Created by Robert Schwartz on 1/28/19.
    Copyright © 2019 Robert Schwartz. All rights reserved. */
 
-#ifndef european_vanilla_option_h
-#define european_vanilla_option_h
+#ifndef EUROPEAN_VANILLA_OPTION_H
+#define EUROPEAN_VANILLA_OPTION_H
 
 //European vanilla call option
 class Option
