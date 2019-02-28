@@ -8,8 +8,6 @@
 #include "european_vanilla_option.h"
 #include <cmath> //pow(), exp(), M_PI, log10(), sqrt()
 
-const double r = 0.026; //1 year treasury rate (1/25/19)
-
 /* calculate first and second parameters (d1 & d2) of CDF
    @return d1/d2 parameter for cumulative distribution function */
 double Option::d1()

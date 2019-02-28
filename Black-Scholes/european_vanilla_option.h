@@ -6,6 +6,8 @@
 #ifndef EUROPEAN_VANILLA_OPTION_H
 #define EUROPEAN_VANILLA_OPTION_H
 
+const double r = 0.026; //1 year treasury rate (1/25/19)
+
 //European vanilla call option
 class Option
 {

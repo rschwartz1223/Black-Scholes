@@ -8,8 +8,6 @@
 #include "european_vanilla_option.h"
 #include <iostream>
 
-const double r = 0.026; //1 year treasury rate (1/25/19)
-
 int main(int argc, const char * argv[])
 {
     Option test_option(100.0, 100.0, 1.0, 0.2); //test option
