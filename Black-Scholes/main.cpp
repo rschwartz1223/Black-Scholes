@@ -7,10 +7,38 @@
 
 #include "european_vanilla_option.h"
 #include <iostream>
+#include <fstream>
+#include <map>
+#include <utility>
+#include <vector>
 
 int main(int argc, const char * argv[])
 {
-    Option test_option(100.0, 100.0, 1.0, 0.2); //test option
+    //open text file
+    std::ifstream options_file("options_data.txt");
+    
+    std::map<unsigned int, Option> options_list; //map of options from text file
+    std::vector<double> option_prices(1530); //vector of option prices from text file, used to check calculations
+    double option_number, volatility, time_in_days, strike_price, option_price; //variables for values in text file
+    
+    // ----------------------------------------------
+    // --------------- FIX FILE INPUT ---------------
+    // ----------------------------------------------
+    //read data from options_data.txt
+    while(options_file >> option_number >> volatility >> time_in_days >> strike_price >> option_price)
+    {
+        options_list.insert(std::pair< unsigned int, Option > (option_number, Option(100, strike_price, (time_in_days / 365), volatility)));
+        option_prices.push_back(option_price);
+    }
+    //close file
+    options_file.close();
+    
+    /*auto it = options_list.begin();
+    std::cout << "CALCULATED VALUE:\tOPTION 1 CALL PRICE = " << it->second.call_price() << std::endl;
+    std::cout << "EXPECTED VALUE:\t\tOPTION 1 CALL PRICE = " << option_prices[0] << std::endl;*/
+    
+    
+    /*Option test_option(100.0, 100.0, 1.0, 0.2); //test option
     
     std::cout << "Underlying Asset Price:\t" << test_option.get_S() << std::endl;
     std::cout << "Strike Price:\t\t\t" << test_option.get_K() << std::endl;
@@ -26,7 +54,7 @@ int main(int argc, const char * argv[])
     std::cout << "Put Theta:\t\t\t\t" << test_option.put_theta() << std::endl;
     std::cout << "Vega:\t\t\t\t\t" << test_option.vega() << std::endl;
     std::cout << "Call Rho:\t\t\t\t" << test_option.call_rho() << std::endl;
-    std::cout << "Put Rho:\t\t\t\t" << test_option.put_rho() << std::endl;
+    std::cout << "Put Rho:\t\t\t\t" << test_option.put_rho() << std::endl;*/
     
     return 0;
 }

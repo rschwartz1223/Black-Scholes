@@ -12,7 +12,7 @@
    @return d1/d2 parameter for cumulative distribution function */
 double Option::d1()
 {
-    double d1 = (log10(this->S / this->K) + (r + (pow(this->sigma, 2)) / 2) * this->T) / (this->sigma * sqrt(this->T));
+    double d1 = (log10(this->S / this->K) + (r + (pow(this->sigma, 2)) / 2) * (this->T)) / (this->sigma * sqrt(this->T));
     return d1;
 }
 double Option::d2()
